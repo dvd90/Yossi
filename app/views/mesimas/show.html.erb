@@ -1,3 +1,23 @@
 <%= @mesima.name %>
 <%= @mesima.description %>
 <%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post %>
+
+
+
+<!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
+
+<% if @users.class != String  %>
+<% @users.each_with_index do |user, index| %>
+<ul>
+  <li><h2> User# <%= index %></h2></li>
+  <li><p>Avatar: <%= user.avatar %></p></li>
+  <li><p>Username: <%= user.username %></p></li>
+  <li><p>Aliyah Date: <%= user.alyah_date %></p></li>
+  <li><p>Pita: <%= user.pita %></p></li>
+</ul>
+<% end  %>
+
+<% else %>
+  <%= @users %>
+<% end %>
+<!-- END -->

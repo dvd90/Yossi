@@ -1,2 +1,15 @@
 <h2>Mesima Index</h2>
+<% @mesimas.each_with_index do |mesima, index| %>
+<% @other_users = Accepted.where.not(user: current_user).where(mesima: mesima).count  %>
+  <ul>
+    <li><h2>Mesima# <%= index %></h2></li>
+    <li><h4><%= link_to 'View This Mesima', mesima_path(mesima.id) %></h4></li>
+    <li><p>Mesima name <%= mesima.name %></p></li>
+    <li><p>Mesima description <%= mesima.description%></p></li>
+    <li><p>Mesima worth <%= mesima.worth %></p></li>
+    <li><p>Mesima category <%= mesima.category %></p></li>
+    <li><p>Users currently doing mesima
+      <%=@other_users %></p></li>
+  </ul>
 
+<% end %>

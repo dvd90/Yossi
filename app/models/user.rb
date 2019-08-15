@@ -5,5 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :mesimas, through: :accepteds
-  mount_uploader :avatar, PhotoUploader
+  mount_uploader :avatar, AvatarUploader
 end

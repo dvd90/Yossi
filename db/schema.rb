@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_172958) do
+ActiveRecord::Schema.define(version: 2019_08_15_175400) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accepteds", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "mesima_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["mesima_id"], name: "index_accepteds_on_mesima_id"
+    t.index ["user_id"], name: "index_accepteds_on_user_id"
+  end
+
+  create_table "mesimas", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "status"
+    t.integer "worth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +41,14 @@ ActiveRecord::Schema.define(version: 2019_08_15_172958) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.datetime "alyah_date"
+    t.integer "pita", default: 0
+    t.string "avatar"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accepteds", "mesimas"
+  add_foreign_key "accepteds", "users"
 end

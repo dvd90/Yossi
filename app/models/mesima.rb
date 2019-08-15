@@ -1,0 +1,2 @@
+class Mesima < ApplicationRecord
+end

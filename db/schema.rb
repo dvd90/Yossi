@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_15_184412) do
+ActiveRecord::Schema.define(version: 2019_08_15_190814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_15_184412) do
     t.bigint "mesima_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["mesima_id"], name: "index_accepteds_on_mesima_id"
     t.index ["user_id"], name: "index_accepteds_on_user_id"
   end
@@ -27,7 +28,6 @@ ActiveRecord::Schema.define(version: 2019_08_15_184412) do
   create_table "mesimas", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.string "status"
     t.integer "worth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

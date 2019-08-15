@@ -2,7 +2,7 @@ class MesimasController < ApplicationController
   before_action :set_mesima, only: [:show]
 
   def index
-    # ...
+
   end
 
   def show

@@ -1,0 +1,33 @@
+<h1>User Dashboard</h1>
+<!-- CURRENT USER TAKES CARE OF ALL INFO NEEDED FOR USER -->
+
+
+<div class="username">
+  <p>Username <%= current_user.username %></p>
+</div>
+
+<div class="alyah-date">
+  <p> Aliyah Date <%= current_user.alyah_date.to_date %></p>
+</div>
+
+<div class="pita-wallet">
+ <p>wallet <%= current_user.pita %></p>
+</div>
+
+
+<!-- BELOW TAKES CARE OF ITERATING OVER ALL CURRENT USER MESIMOT -->
+<!-- @accepted IS = TO ALL ACCEPETED OBJECTS THAT BELONG TO CURRENT USER -->
+
+<div class="accepted-mesimot">
+  <% @accepted.each_with_index do |task, ind| %>
+  <ul>
+    <li><h1>Task # <%= ind %></h1></li>
+    <li> Status: <%= task.status %></li>
+    <li> Mesima Name: <%= task.mesima.name%></li>
+    <li> Mesima Description: <%= task.mesima.description%></li>
+    <li> Mesima Worth: <%= task.mesima.worth%></li>
+    <li>Mesima Category: <%= task.mesima.category %></li>
+</ul>
+<% end %>
+</div>
+<!-- MESIMOT ENDS HERE -->

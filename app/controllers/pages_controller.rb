@@ -6,7 +6,6 @@ class PagesController < ApplicationController
 
   def dashboard
     @accepted = Accepted.where(user: current_user)
-
   end
 
   def profile

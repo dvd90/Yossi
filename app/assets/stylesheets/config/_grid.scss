@@ -1,0 +1,16 @@
+//grid
+$grid-width: 1140px;
+$gutter-vertical: 80px;
+$gutter-horizonatl:60px;
+
+.row {
+  width: $grid-width;
+}
+
+.text {
+  width: 60%;
+}
+
+.image {
+  width: 40%;
+}

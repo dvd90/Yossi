@@ -1,12 +1,62 @@
-.navbar-lewagon {
+header {
+  padding: 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  left: 0;
+  height: 50px;
+
+}
+
+header .navbar {
+  float: right;
+}
+
+header .navbar .navbar-open {
+  background: #dfe5e8;
+  width: 10px;
+  height: 10px;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  cursor: pointer;
+  background: url(http://johnuberbacher.com/projects/md/img/ico/menu.svg) 50% 0px / cover no-repeat;
+}
+
+header .navbar ul {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 51px;
+  padding: 0;
+  background: #FFFFFF;
+  margin: 0;
+  display: none;
+  border-bottom: 1px solid #dfe5e8;
+}
+
+header .navbar ul li {
+  display: block;
+}
+
+header .navbar ul li a {
+  padding: 15px 15px;
+  text-decoration: none;
+  color: #78909C;
+  display: block;
+  background: rgb(245, 249, 249);
+}
+
+.navbar .navbar-brand img {
+  width: 60px;
+}
+
+.clear {
+  clear: both;
+}
+
+.navbar {
   justify-content: space-between;
-  background: white;
-}
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: -webkit-fill-available;
 }

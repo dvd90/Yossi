@@ -1,6 +1,6 @@
 class Mesima < ApplicationRecord
   has_many :users, through: :accepteds
-  validates :category, inclusion: { in: ["food", "activity", "attitude"] }
+  validates :category, inclusion: { in: ["food", "activity", "hutzpa"] }
 
 
  def self.set_difficulty(mesima)

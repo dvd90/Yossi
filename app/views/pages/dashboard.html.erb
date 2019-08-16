@@ -26,6 +26,7 @@
 
   <div class="accepted-mesimot">
     <% @accepted.each_with_index do |task, ind| %>
+    <%= link_to mesima_path(task.mesima) do %>
     <div class="challenge-card">
       <ul>
         <li> <h2 class="challenge-card-title">Challenge # <%= ind %></h2></li>
@@ -36,13 +37,14 @@
         <li> <p>Mesima Category: <%= task.mesima.category %></p></li>
       </ul>
     </div>
+    <% end %>
   <% end %>
   </div>
 
   <!-- @UNTIL_YOSSI IS SET IN THE PAGES CONTROLLER -->
   <div class="yossi-graph">
     <h2>My Yossi</h2>
-    <p>I'm are XX% Sabra</p>
+    <p>I'm are <%= current_user.pita %>% Sabra</p>
     <img src="/assets/Yossi.3-232f84bca13f81176ba2453f63c97697b63f2a2c1f16fd43c89ac9fba4f4cc78.png" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) <%= @until_yossi %>, #EAC435 100%);">
   </div>
 </div>

@@ -3,9 +3,9 @@ class MesimasController < ApplicationController
 
   def index
     # @mesimas = Mesima.all
-    @food_mesima = Mesima.where(category: 'food')[0..2]
-    @activity_mesima = Mesima.where(category: 'activity')[0..2]
-    @attitude_mesima = Mesima.where(category: 'attitude')[0..2]
+    @food_mesima = Mesima.where(category: 'Food')[0..2]
+    @activity_mesima = Mesima.where(category: 'Activity')[0..2]
+    @attitude_mesima = Mesima.where(category: 'Hutzpa')[0..2]
   end
 
   def show

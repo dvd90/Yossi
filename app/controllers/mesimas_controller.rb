@@ -11,6 +11,7 @@ class MesimasController < ApplicationController
   def show
     user = Accepted.where.not(user: current_user).where(mesima: @mesima)
     @users = user.count > 0 ? user.map(&:user) : 'No other users'
+    @acc = Accepted.where(user:current_user, mesima: @mesima).first
   end
 
   private

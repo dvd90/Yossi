@@ -1,23 +1,45 @@
-<%= @mesima.name %>
-<%= @mesima.description %>
-<%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post %>
-
-
-
-<!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
-
-<% if @users.class != String  %>
-<% @users.each_with_index do |user, index| %>
-<ul>
-  <li><h2> User# <%= index %></h2></li>
-  <li><p>Avatar: <%= user.avatar %></p></li>
-  <li><p>Username: <%= user.username %></p></li>
-  <li><p>Aliyah Date: <%= user.alyah_date %></p></li>
-  <li><p>Pita: <%= user.pita %></p></li>
-</ul>
-<% end  %>
-
-<% else %>
-  <%= @users %>
-<% end %>
-<!-- END -->
+  <div class="background2">
+    <div class="wrappaer-3">
+      <div class="right">
+        <div class="title-wrapper">
+          <h1 class="category"><%= @mesima.category %></h1>
+        </div>
+          <p><%= @mesima.name %></p>
+          <p><%= @mesima.description %></p>
+          <p><%= @mesima.worth %> falafels</p>
+        </div>
+          <div class="left">
+        <div class="klaf task-klaf">
+          <div class="sub-title">
+            <div class="klaf-title">
+             <h2 class="klaf-title">Who Did It</h2>
+            </div>
+          </div>
+          <% if @users.class != String %>
+          <% @users.each_with_index do |user, index| %>
+          <ul>
+            <% if user.avatar.url %>
+            <%= cl_image_tag user.avatar, class:"avatar" %>
+            <% else %>
+            <%= image_tag "falafel.png", class:"avatar" %>
+            <% end %>
+            <li><p><%= user.username %></p></li>
+            <li><p>Aliyah Date: <%= user.alyah_date.year %></p></li>
+            <li><p>Pita: <%= user.pita %></p></li>
+          </ul>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
+      <!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
+    </div>
+    <% if @acc %>
+    <div class="button">
+    <%= link_to "Finish the Challenge", mesima_accepted_path(@mesima, @acc), method: :patch, class:"p-button" %>
+    </div>
+    <% else %>
+    <div class="button">
+      <%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post, class:"p-button" %>
+    </div>
+    <% end %>
+  </div>

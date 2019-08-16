@@ -1,9 +1,9 @@
 //grid
-$grid-width: 1140px;
+$grid-width: 100%;
 $gutter-vertical: 80px;
 $gutter-horizonatl:60px;
 
-.row {
+.wrappaer {
   width: $grid-width;
 }
 

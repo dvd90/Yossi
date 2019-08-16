@@ -1,13 +1,22 @@
-<h1>User Dashboard</h1>
-<!-- CURRENT USER TAKES CARE OF ALL INFO NEEDED FOR USER -->
 
-
-<div class="username">
-  <p>Username <%= current_user.username %></p>
-</div>
-
-<div class="alyah-date">
-  <p> Aliyah Date <%= current_user.alyah_date.to_date %></p>
+  <!-- CURRENT USER TAKES CARE OF ALL INFO NEEDED FOR USER -->
+<div class="dashboard-banner">
+  <div class="dashboard-banner-content">
+    <div class="username">
+      <h1><%= current_user.username %></h1>
+    </div>
+    <div>
+    <%= image_tag("dashflowers.png")%>
+    </div>
+    <div class="user-details">
+      <div class="alyah-date">
+          <p>Aliyah Date <%= current_user.alyah_date.to_date %></p>
+      </div>
+      <div class="pita-wallet">
+         <p>Pita <%= current_user.pita %></p>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="pita">
@@ -17,19 +26,22 @@
 <!-- @UNTIL_YOSSI IS SET IN THE PAGES CONTROLLER -->
 <div class="until-yossi"><div id="status" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) <%= @until_yossi %>, #EAC435 100%);"></div></div>
 
+
 <!-- BELOW TAKES CARE OF ITERATING OVER ALL CURRENT USER MESIMOT -->
 <!-- @accepted IS = TO ALL ACCEPETED OBJECTS THAT BELONG TO CURRENT USER -->
 
 <div class="accepted-mesimot">
   <% @accepted.each_with_index do |task, ind| %>
-  <ul>
-    <li><h1>Task # <%= ind %></h1></li>
-    <li> Status: <%= task.status %></li>
-    <li> Mesima Name: <%= task.mesima.name%></li>
-    <li> Mesima Description: <%= task.mesima.description%></li>
-    <li> Mesima Worth: <%= task.mesima.worth%></li>
-    <li>Mesima Category: <%= task.mesima.category %></li>
-</ul>
+  <div class="challenge-card">
+    <ul>
+      <li> <h2 class="challenge-card-title">Challenge # <%= ind %></h2></li>
+      <li> <p>Status: <%= task.status %></p></li>
+      <li> <p>Mesima Name: <%= task.mesima.name%></p></li>
+      <li> <p>Mesima Description: <%= task.mesima.description%></p></li>
+      <li> <p>Mesima Worth: <%= task.mesima.worth%></p></li>
+      <li> <p>Mesima Category: <%= task.mesima.category %></p></li>
+    </ul>
+  </div>
 <% end %>
 </div>
 

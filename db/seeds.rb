@@ -34,12 +34,12 @@ Mesima.create(name:'Argue', description:'I argued about something super menial, 
 Mesima.create(name:'Push', description:'I pushed and pushed until someone in the bureaucratic system finally did what I asked.', worth:5, category:'Hutzpa')
 Mesima.create(name:'Haggle', description:'I negotiated the price of my bananas like a pro.', worth: 3, category:'Hutzpa')
 
-2.times do
+
 User.all.each do |user|
    Accepted.create(user: user,
                   mesima: Mesima.all[(rand(0..13))],
                   status: 'accepted')
 end
-end
+
 
 puts "done...."

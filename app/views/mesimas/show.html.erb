@@ -1,27 +1,35 @@
-<div class="container">
   <div class="background2">
-    <div class="row justify-content-between">
-      <div class="col-4">
-        <h1><%= @mesima.category %></h1>
-        <h1><%= @mesima.name %></h1>
-        <h1><%= @mesima.description %></h1>
-        <h1><%= @mesima.worth %> falafels</h1>
-      </div>
-      <div class="col-4 card-users">
-        <div class="card-title">
-        <h1>Who did the challenge?</h1>
+    <div class="wrappaer-3">
+      <div class="right">
+        <div class="title-wrapper">
+          <h1 class="category"><%= @mesima.category %></h1>
         </div>
-        <% if @users.class != String %>
-        <% @users.each_with_index do |user, index| %>
-        <ul>
-          <li><h2> User# <%= index %></h2></li>
-          <li><p>Avatar: <%= user.avatar %></p></li>
-          <li><p>Username: <%= user.username %></p></li>
-          <li><p>Aliyah Date: <%= user.alyah_date %></p></li>
-          <li><p>Pita: <%= user.pita %></p></li>
-        </ul>
-        <% end %>
-        <% end %>
+          <p><%= @mesima.name %></p>
+          <p><%= @mesima.description %></p>
+          <p><%= @mesima.worth %> falafels</p>
+        </div>
+          <div class="left">
+        <div class="klaf task-klaf">
+          <div class="sub-title">
+            <div class="klaf-title">
+             <h2 class="klaf-title">Who Did It</h2>
+            </div>
+          </div>
+          <% if @users.class != String %>
+          <% @users.each_with_index do |user, index| %>
+          <ul>
+            <% if user.avatar.url %>
+            <%= cl_image_tag user.avatar, class:"avatar" %>
+            <% else %>
+            <%= image_tag "falafel.png", class:"avatar" %>
+            <% end %>
+            <li><p><%= user.username %></p></li>
+            <li><p>Aliyah Date: <%= user.alyah_date.year %></p></li>
+            <li><p>Pita: <%= user.pita %></p></li>
+          </ul>
+          <% end %>
+          <% end %>
+        </div>
       </div>
       <!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
     </div>
@@ -29,4 +37,3 @@
       <%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post, class:"p-button" %>
     </div>
   </div>
-</div>

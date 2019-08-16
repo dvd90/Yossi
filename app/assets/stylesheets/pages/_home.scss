@@ -2,17 +2,31 @@
 
 h1 {
   color: $blue;
+}
 
+h2 {
+  font-family: $body_font;
+}
+
+h4{
+  font-family: $body_font;
 }
 
 p {
-  margin-top: 20px;
   color: $blue;
   line-height: 125%;
 }
 
 .wrappaer {
   height: 100vh;
+}
+
+.wrapper-1 {
+    margin-bottom: 40px;
+}
+
+.wrapper-2 {
+    margin-bottom: 40px;
 }
 
 .main-title {
@@ -48,6 +62,69 @@ p {
 
 .cactus img {
   height: 94vh;
+}
+
+//phase 2
+
+.background {
+  background-image: url('https://res.cloudinary.com/diu66bbfw/image/upload/v1565907628/yellow_bg.png');
+  height: 94vh;
+  max-width: 100%;
+  background-size: cover;
+  margin: auto 100px;
+  position: relative;
+}
+
+.klafs-wrapper{
+  display: flex;
+  height: 94vh;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto 50px;
+}
+
+.klaf {
+  height: 400px;
+  width: 340px;
+  background-color: white;
+  top: 2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  margin-top: 5%;
+
+}
+
+.sub-title {
+  background-color: $blue;
+}
+
+.klaf-title {
+    font-size: 30px;
+    text-align: center;
+    padding: 15px;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.button {
+  background-color: $blue;
+  width: fit-content;
+  font-size: 30px;
+  border-radius: 5px;
+  position: absolute;
+  right: 50%;
+  margin-top: -30px;
+}
+
+.p-button{
+  color: $yellow;
+  margin: 0;
+  padding: 10px 15px;
 }
 
 //Animation

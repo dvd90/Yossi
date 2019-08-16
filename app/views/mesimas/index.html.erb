@@ -1,15 +1,78 @@
-<h2>Mesima Index</h2>
-<% @mesimas.each_with_index do |mesima, index| %>
-<% @other_users = Accepted.where.not(user: current_user).where(mesima: mesima).count  %>
-  <ul>
-    <li><h2>Mesima# <%= index %></h2></li>
-    <li><h4><%= link_to 'View This Mesima', mesima_path(mesima.id) %></h4></li>
-    <li><p>Mesima name <%= mesima.name %></p></li>
-    <li><p>Mesima description <%= mesima.description%></p></li>
-    <li><p>Mesima worth <%= mesima.worth %></p></li>
-    <li><p>Mesima category <%= mesima.category %></p></li>
-    <li><p>Users currently doing mesima
-      <%=@other_users %></p></li>
-  </ul>
+<div class="background-wrap"style="background-image: url('/assets/mesima-index-775bd3602bbcddd9b087f1a89e192c8580b17b0740f3bf25a10235f394d9fd08.png')">
 
+<div class="main-content">
+  <div class="header-text-wrap">
+    <p>All The Mesimot</p>
+  </div>
+  <div class="mesimot-index-wrap">
+    <div class="cards">
+      <div class="food card-d">
+        <div class="card-head">
+        <p>Food</p>
+      </div>
+      <div class="mesimot-wrap">
+<!--  -->
+<% @food_mesima.each do |food| %>
+        <div class="mesima">
+          <div class="mesima-name"><p><%= link_to "#{food.name}", mesima_path(food) %></p></div>
+          <div class="mesima-info">
+            <div class="mesima-worth">
+              <%= image_tag('Frame.png', size: 20) %>
+              <p><%= food.worth %> Falafels</p>
+            </div>
+            <div class="mesima-difficulty">
+              <%= image_tag('difficulty.png', size: 20) %>
+              <p><%= Mesima.set_difficulty(food.worth)%></p>
+            </div>
+          </div>
+        </div>
 <% end %>
+<!--  -->
+      </div>
+    </div>
+      <div class="activity card-d"><div class="card-head">
+        <p>Activity</p>
+      </div>
+        <div class="mesimot-wrap">
+          <% @activity_mesima.each do |food| %>
+        <div class="mesima">
+          <div class="mesima-name"><p><%= link_to "#{food.name}", mesima_path(food) %></p></div>
+          <div class="mesima-info">
+            <div class="mesima-worth">
+              <%= image_tag('Frame.png', size: 20) %>
+              <p><%= food.worth %> Falafels</p>
+            </div>
+            <div class="mesima-difficulty">
+              <%= image_tag('difficulty.png', size: 20) %>
+              <p><%= Mesima.set_difficulty(food.worth)%></p>
+            </div>
+          </div>
+        </div>
+<% end %>
+        </div>
+    </div>
+      <div class="attitude card-d"><div class="card-head">
+        <p>Attitude</p>
+      </div>
+        <div class="mesimot-wrap">
+          <% @attitude_mesima.each do |food| %>
+        <div class="mesima">
+          <div class="mesima-name"><p><%= link_to "#{food.name}", mesima_path(food) %></p></div>
+          <div class="mesima-info">
+            <div class="mesima-worth">
+              <%= image_tag('Frame.png', size: 20) %>
+              <p><%= food.worth %> Falafels</p>
+            </div>
+            <div class="mesima-difficulty">
+              <%= image_tag('difficulty.png', size: 20) %>
+              <p><%= Mesima.set_difficulty(food.worth)%></p>
+            </div>
+          </div>
+        </div>
+<% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</div>

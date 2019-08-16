@@ -1,12 +1,12 @@
-<%= @mesima.name %>
-<%= @mesima.description %>
-<%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post %>
-
-
-
+<h1><%= @mesima.category %></h1>
+<h1><%= @mesima.name %></h1>
+<h1><%= @mesima.description %></h1>
+<h1><%= @mesima.worth %> falafels</h1>
+<div class="button">
+  <%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post, class:"p-button" %>
+</div>
 <!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
-
-<% if @users.class != String  %>
+<% if @users.class != String %>
 <% @users.each_with_index do |user, index| %>
 <ul>
   <li><h2> User# <%= index %></h2></li>
@@ -15,9 +15,6 @@
   <li><p>Aliyah Date: <%= user.alyah_date %></p></li>
   <li><p>Pita: <%= user.pita %></p></li>
 </ul>
-<% end  %>
-
-<% else %>
-  <%= @users %>
+<% end %>
 <% end %>
 <!-- END -->

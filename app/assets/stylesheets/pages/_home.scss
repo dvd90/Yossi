@@ -30,14 +30,12 @@ p {
 }
 
 .main-title {
-  padding-bottom: 30px;
   font-family: $headers-font;
   font-size: 125px;
   line-height: 93.9%;
   border-bottom: solid 15px $blue;
   width: fit-content;
   padding-bottom: 20px;
-
 }
 
 .secondary {
@@ -131,6 +129,7 @@ p {
 //Animation
 
 .fade-in {
+      padding-bottom: 35px;
   -webkit-animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
           animation: fade-in 2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }

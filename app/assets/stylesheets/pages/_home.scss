@@ -74,6 +74,15 @@ p {
   position: relative;
 }
 
+.background2 {
+  background-image: url('https://res.cloudinary.com/diu66bbfw/image/upload/v1565923512/bg.png');
+  height: 94vh;
+  max-width: 100%;
+  background-size: cover;
+  margin: auto;
+  position: relative;
+}
+
 .klafs-wrapper{
   display: flex;
   height: 94vh;

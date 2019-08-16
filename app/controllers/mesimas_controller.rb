@@ -2,7 +2,10 @@ class MesimasController < ApplicationController
   before_action :set_mesima, only: [:show]
 
   def index
-    @mesimas = Mesima.all
+    # @mesimas = Mesima.all
+    @food_mesima = Mesima.where(category: 'food')[0..2]
+    @activity_mesima = Mesima.where(category: 'activity')[0..2]
+    @attitude_mesima = Mesima.where(category: 'attitude')[0..2]
   end
 
   def show

@@ -2,7 +2,7 @@
   <div class="background2">
     <div class="row justify-content-between">
       <div class="col-4">
-        <h1><%= @mesima.category %></h1>
+        <h1 style="font-size: 90px;"><%= @mesima.category %></h1>
         <h1><%= @mesima.name %></h1>
         <h1><%= @mesima.description %></h1>
         <h1><%= @mesima.worth %> falafels</h1>
@@ -25,8 +25,15 @@
       </div>
       <!-- @USERS IS ALL USERS WHO HAVE ACCPETED THIS CHALLENGE -->
     </div>
+    <% if @acc %>
+    <p>Click here just if you did the challenge we will trust you until we have more time to code the feature :)</p>
+    <div class="button">
+    <%= link_to "Finish the Challenge", mesima_accepted_path(@mesima, @acc), method: :patch, class:"p-button" %>
+    </div>
+    <% else %>
     <div class="button">
       <%= link_to "Start The Challenge", mesima_accepteds_path(@mesima), method: :post, class:"p-button" %>
     </div>
+    <% end %>
   </div>
 </div>

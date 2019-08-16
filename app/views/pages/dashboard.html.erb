@@ -28,12 +28,12 @@
     <% @accepted.each_with_index do |task, ind| %>
     <div class="challenge-card">
       <ul>
-        <li> <h2 class="challenge-card-title">Challenge # <%= ind %></h2></li>
-        <li> <p>Status: <%= task.status %></p></li>
-        <li> <p>Mesima Name: <%= task.mesima.name%></p></li>
-        <li> <p>Mesima Description: <%= task.mesima.description%></p></li>
-        <li> <p>Mesima Worth: <%= task.mesima.worth%></p></li>
-        <li> <p>Mesima Category: <%= task.mesima.category %></p></li>
+        <h2 class="challenge-card-title">Challenge # <%= ind %></h2>
+        <p>Status: <%= task.status %></p>
+        <p>Mesima Name: <%= task.mesima.name%></p>
+        <p>Mesima Description: <%= task.mesima.description%></p>
+        <p>Mesima Worth: <%= task.mesima.worth%></p>
+        <p>Mesima Category: <%= task.mesima.category %></p>
       </ul>
     </div>
   <% end %>

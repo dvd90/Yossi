@@ -19,6 +19,14 @@
   </div>
 </div>
 
+<div id="pita">
+ <p>wallet <%= current_user.pita %></p>
+</div>
+
+<!-- @UNTIL_YOSSI IS SET IN THE PAGES CONTROLLER -->
+<div class="until-yossi"><div id="status" style="background: linear-gradient(180deg, rgba(255, 255, 255, 0) <%= @until_yossi %>, #EAC435 100%);"></div></div>
+
+
 <!-- BELOW TAKES CARE OF ITERATING OVER ALL CURRENT USER MESIMOT -->
 <!-- @accepted IS = TO ALL ACCEPETED OBJECTS THAT BELONG TO CURRENT USER -->
 
@@ -36,4 +44,5 @@
   </div>
 <% end %>
 </div>
+
 <!-- MESIMOT ENDS HERE -->

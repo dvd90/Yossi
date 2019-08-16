@@ -14,21 +14,21 @@ header .navbar {
 }
 
 header .navbar .navbar-open {
-  background: #dfe5e8;
+  background: white;
   width: 10px;
   height: 10px;
   padding: 10px;
   margin: 10px;
   display: block;
   cursor: pointer;
-  background: url(http://johnuberbacher.com/projects/md/img/ico/menu.svg) 50% 0px / cover no-repeat;
+  background: url(http://johnuberbacher.com/projects/md/img/ico/menu.svg) 50% / cover no-repeat;
 }
 
 header .navbar ul {
   position: fixed;
   width: 100%;
   left: 0;
-  top: 51px;
+  top: 60px;
   padding: 0;
   background: #FFFFFF;
   margin: 0;
@@ -45,7 +45,7 @@ header .navbar ul li a {
   text-decoration: none;
   color: #78909C;
   display: block;
-  background: rgb(245, 249, 249);
+  background: whi;
 }
 
 .navbar .navbar-brand img {

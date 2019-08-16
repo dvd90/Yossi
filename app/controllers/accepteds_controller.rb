@@ -10,6 +10,7 @@ class AcceptedsController < ApplicationController
   def update
     @accepted.update(status: "completed")
     current_user.pita += @mesima.worth
+    current_user.save
     redirect_to dashboard_path
   end
 

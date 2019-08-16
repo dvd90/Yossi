@@ -14,7 +14,7 @@ header .navbar {
 }
 
 header .navbar .navbar-open {
-  background: #dfe5e8;
+  background: white;
   width: 10px;
   height: 10px;
   padding: 10px;
@@ -28,7 +28,7 @@ header .navbar ul {
   position: fixed;
   width: 100%;
   left: 0;
-  top: 51px;
+  top: 60px;
   padding: 0;
   background: #FFFFFF;
   margin: 0;
@@ -45,7 +45,7 @@ header .navbar ul li a {
   text-decoration: none;
   color: #78909C;
   display: block;
-  background: rgb(245, 249, 249);
+  background: white;
 }
 
 .navbar .navbar-brand img {

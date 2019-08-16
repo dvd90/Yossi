@@ -1,0 +1,16 @@
+//grid
+$grid-width: 100%;
+$gutter-vertical: 80px;
+$gutter-horizonatl:60px;
+
+.wrappaer {
+  width: $grid-width;
+}
+
+.text {
+  width: 60%;
+}
+
+.image {
+  width: 40%;
+}
